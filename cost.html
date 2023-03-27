@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cost FAQ</title>
+	
+</head>
+
+
+<p class="accordion">Can I have more than one uplift for the same product?</p>
+<div class="panel">ODBMS can only hold one uplift per product/per PO.<br>
+However once Imports cost the shipment, all margins are automatically adjusted. <br>
+However, you can either raise a new PO to have two separate transport methos so the margins are more accurate.<br> 
+Imports aim to have all shipments costed within 3 days of delivery so that margins are corrected at the earliest possibility, ideally this would be before any sales are made.</div>
+
+<p class="accordion">What is SADC? Who pays for what?</p>
+<div class="panel">SADC means sea air difference. RI pay for the sea freight and the supplier pay for the Air.</div>
+
+</div>
+<p class="accordion">How to find a net landed cost?</p>
+<div class="panel">To find a net landed cost - Go to the tab 'Costs ' then click on ' Product Cost Enquiry'.
+Type in the product you need the landed cost for then ' Get Detail'. You will see the 'Landed cost' in the 'Landed Cost' Box.
+</div>
+
+<style>
+/* Style the element that is used to open and close the accordion class */
+p.accordion {
+    background-color: #ebf4fc;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 80%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-bottom:10px;
+}
+
+/* Add a background color to the accordion if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+p.accordion.active, p.accordion:hover {
+    background-color: #d9ecff;
+}
+
+/* Unicode character for "plus" sign (+) */
+p.accordion:after {
+    content: '\2795'; 
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+/* Unicode character for "minus" sign (-) */
+p.accordion.active:after {
+    content: "\2796"; 
+}
+
+/* Style the element that is used for the panel class */
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s ease-in-out;
+    opacity: 0;
+    margin-bottom:10px;
+}
+
+div.panel.show {
+    opacity: 1;
+    max-height: 500px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function(event) { 
+
+
+var acc = document.getElementsByClassName("accordion");
+var panel = document.getElementsByClassName('panel');
+
+for (var i = 0; i < acc.length; i++) {
+    acc[i].onclick = function() {
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+
+        if (setClasses) {
+            this.classList.toggle("active");
+            this.nextElementSibling.classList.toggle("show");
+        }
+    }
+}
+
+function setClass(els, className, fnName) {
+    for (var i = 0; i < els.length; i++) {
+        els[i].classList[fnName](className);
+    }
+}
+
+});
+</script>
+
+</html>
